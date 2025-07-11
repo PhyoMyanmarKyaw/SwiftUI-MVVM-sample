@@ -1,48 +1,36 @@
-# MVVM Posts App
+# 📱 SwiftUI + MVVM Posts App
 
 A simple iOS app demonstrating MVVM architecture with SwiftUI and async/await.
 
 ## Features
+- 🗂️ Fetch and display posts from [JSONPlaceholder API](https://jsonplaceholder.typicode.com)
+- 👤 View post details with author information
+- 🔄 Pull-to-refresh support
+- ⏳ Loading states & error handling
 
-- Fetch and display posts from JSONPlaceholder API
-- View post details with author information
-- Pull-to-refresh support
-- Loading states and error handling
+## Screenshots
+| List View | Detail View |
+|-----------|------------|
+| <img width="150" alt="Image" src="https://github.com/user-attachments/assets/8524422d-b3c0-4079-bfa3-731e1ee5d3d0" /> | <img width="150" alt="Image" src="https://github.com/user-attachments/assets/be867aea-06a2-4940-b385-0feee2c425d4" />
 
-## Architecture
+## Tech Stack
+- **SwiftUI** for declarative UI
+- **Swift Concurrency** (`async/await`) for networking
+- **URLSession + Codable** for API calls
+- **MVVM** for separation of concerns
 
-### MVVM Pattern
-- **Model**: `Post` and `User` data structures
-- **View**: SwiftUI views (`ContentView`, `PostDetailView`)
-- **ViewModel**: `PostsViewModel` and `PostDetailViewModel` with `@Published` properties
+## API Endpoints Used
+| Endpoint | Description |
+|----------|-------------|
+| `GET /posts` | Fetch all posts |
+| `GET /users/{id}` | Fetch user details for a post |
 
-### Key Components
+## Installation
+1. Clone the repo:
+   ```bash
+   git clone https://github.com/PhyoMyanmarKyaw/SwiftUI-MVVM-sample.git
+   
+2. Open SwiftUI_MVVM-sample.xcodeproj in Xcode.
+3. Build and run (⌘ + R).
 
-**NetworkService**
-- Protocol-based networking layer
-- Async/await for API calls
-- Error handling with custom error types
-
-**ViewModels**
-- `@MainActor` for UI thread safety
-- `@Published` properties for reactive updates
-- Dependency injection for testability
-
-**Views**
-- SwiftUI with proper state management
-- Navigation using NavigationView/NavigationLink
-- Loading and error states
-
-## API
-
-Uses [JSONPlaceholder](https://jsonplaceholder.typicode.com/) for sample data:
-- `/posts` - List of posts
-- `/users/{id}` - User details
-
-## Getting Started
-
-1. Clone the repository
-2. Open in Xcode
-3. Run the project
-
-No additional setup or API keys required.
+ No API keys or additional setup required.
